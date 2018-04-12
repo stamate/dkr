@@ -1,0 +1,4 @@
+sklearn_pandas
+tensorflow-gpu
+cntk-gpu
+keras

@@ -1,0 +1,13 @@
+bcolz
+h5py
+matplotlib
+mkl
+nose
+notebook
+Pillow
+pandas
+pygpu
+pyyaml
+scikit-learn
+six
+theano
