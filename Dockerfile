@@ -50,15 +50,17 @@ RUN conda update -n base conda && \
     pip install --upgrade pip
 
 # Install conda and pip packages
-RUN conda install --yes --file /tmp/conda.txt
+RUN conda install --yes --file /tmp/conda.txt -c pytorch
 RUN pip --no-cache-dir install -r /tmp/pip.txt
 
 # Remove conda cache
 RUN conda clean -yt
 
+USER root
 # Remove install files
 RUN rm -rf /tmp/*
 
+USER $NB_USER
 # Add theano configs
 ADD theanorc /home/$NB_USER/.theanorc
 
@@ -66,4 +68,4 @@ ADD theanorc /home/$NB_USER/.theanorc
 WORKDIR $NB_DIR
 EXPOSE $NB_PORT
 
-CMD jupyter notebook --port=$NB_PORT --ip=0.0.0.0
+CMD jupyter notebook --port=$NB_PORT --ip=0.0.0.0 --NotebookApp.password='sha1:b4e4e0deb244:a8b99d99395ec48ea1d22e0ed3f2773d268cf5c0'

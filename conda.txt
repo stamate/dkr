@@ -1,6 +1,7 @@
 bcolz
 h5py
 matplotlib
+seaborn
 mkl
 nose
 notebook
@@ -11,3 +12,6 @@ pyyaml
 scikit-learn
 six
 theano
+pytorch
+torchvision
+cuda90
