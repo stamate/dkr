@@ -9,7 +9,7 @@ BACKEND=tensorflow
 NAME=$(shell dirname `pwd` | xargs basename)
 SRC?=$(shell dirname `pwd`)
 
-DATA?="/mnt/hermes/data/$(NAME)"
+DATA?="/mnt/hermes/data"
 NB_DIR?=$(shell sed -n 's/^ENV NB_DIR *//p' $(DOCKER_FILE))
 PYTHON_VERSION?=$(shell sed -n 's/^ARG python_version=*//p' $(DOCKER_FILE))
 CUDA_VERSION?=$(shell sed -n 's/^ARG cuda_version=*//p' $(DOCKER_FILE))

@@ -61,6 +61,8 @@ USER root
 RUN rm -rf /tmp/*
 
 USER $NB_USER
+ENV SHELL /bin/zsh
+
 # Add theano configs
 ADD theanorc /home/$NB_USER/.theanorc
 
