@@ -9,8 +9,8 @@ ENV NB_UID 1000
 ENV NB_DIR /src
 
 # Miniconda
-ENV CONDA Miniconda3-4.4.10-Linux-x86_64.sh
-ENV SHA256 0c2e9b992b2edd87eddf954a96e5feae86dd66d69b1f6706a99bd7fa75e7a891
+ENV CONDA Miniconda3-4.5.4-Linux-x86_64.sh
+ENV CONDA_MD5 a946ea1d0c4a642ddf0c3a26a18bb16d
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
 ENV PYTHONPATH='$NB_DIR/:$PYTHONPATH'
@@ -30,7 +30,7 @@ RUN apt-get update && \
 
 # Install conda
 RUN wget --quiet --no-check-certificate https://repo.continuum.io/miniconda/$CONDA && \
-    echo "$SHA256 *$CONDA" | sha256sum -c - && \
+    echo "$CONDA_MD5 *$CONDA" | md5sum -c - && \
     /bin/bash /$CONDA -f -b -p $CONDA_DIR && \
     rm $CONDA && \
     echo export PATH=$CONDA_DIR/bin:'$PATH' > /etc/profile.d/conda.sh
