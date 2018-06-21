@@ -12,3 +12,4 @@ pygpu
 pyyaml
 scikit-learn
 six
+opencv

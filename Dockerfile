@@ -50,7 +50,7 @@ RUN conda update -n base conda && \
     pip install --upgrade pip
 
 # Install conda and pip packages
-RUN conda install --yes --file /tmp/conda.txt -c pytorch
+RUN conda install --yes --file /tmp/conda.txt -c conda-forge
 RUN pip --no-cache-dir install -r /tmp/pip.txt
 
 # Remove conda cache
