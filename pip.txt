@@ -1,5 +1,6 @@
 sklearn_pandas
 tensorflow-gpu
+theano
 keras
 PyWavelets
 
