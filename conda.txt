@@ -8,8 +8,10 @@ nose
 notebook
 Pillow
 pandas
+theano
 pygpu
 pyyaml
 scikit-learn
 six
 opencv
+mkl-service

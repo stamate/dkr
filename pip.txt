@@ -1,6 +1,6 @@
 sklearn_pandas
 tensorflow-gpu
-theano
+cntk-gpu
 keras
 PyWavelets
-
+xlrd
