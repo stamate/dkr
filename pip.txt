@@ -4,3 +4,8 @@ cntk-gpu
 keras
 PyWavelets
 xlrd
+jupyterlab
+http://download.pytorch.org/whl/cu90/torch-0.4.0-cp36-cp36m-linux_x86_64.whl 
+torchvision
+tsfresh
+pandas_validator

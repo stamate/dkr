@@ -70,4 +70,4 @@ ADD theanorc /home/$NB_USER/.theanorc
 WORKDIR $NB_DIR
 EXPOSE $NB_PORT
 
-CMD jupyter notebook --port=$NB_PORT --ip=0.0.0.0 --NotebookApp.password='sha1:b4e4e0deb244:a8b99d99395ec48ea1d22e0ed3f2773d268cf5c0'
+CMD jupyter lab --port=$NB_PORT --ip=0.0.0.0 --NotebookApp.password='sha1:b4e4e0deb244:a8b99d99395ec48ea1d22e0ed3f2773d268cf5c0'
