@@ -13,5 +13,4 @@ transforms3d
 scikit-image
 scikit-optimize
 boto3
-tseries
-hmmlearn
+
