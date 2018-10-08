@@ -24,7 +24,7 @@ bash: build
 ipython: build
 	$(DOCKER) run -it -v $(SRC):$(NB_DIR)/easy -v $(DATA):$(NB_DIR)/data --env KERAS_BACKEND=$(BACKEND) $(NAME) ipython
 
-notebook: build
+lab: build
 	$(DOCKER) run -it -v $(SRC):$(NB_DIR)/easy -v $(DATA):$(NB_DIR)/data --net=host --env KERAS_BACKEND=$(BACKEND) $(NAME)
 
 test: build

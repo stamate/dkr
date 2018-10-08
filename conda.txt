@@ -15,3 +15,5 @@ scikit-learn
 six
 opencv
 mkl-service
+nodejs
+bqplot

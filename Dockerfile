@@ -9,8 +9,8 @@ ENV NB_UID 1000
 ENV NB_DIR /src
 
 # Miniconda
-ENV CONDA Miniconda3-4.5.4-Linux-x86_64.sh
-ENV CONDA_MD5 a946ea1d0c4a642ddf0c3a26a18bb16d
+ENV CONDA Miniconda3-4.3.31-Linux-x86_64.sh
+ENV CONDA_MD5 7fe70b214bee1143e3e3f0467b71453c
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
 ENV PYTHONPATH='$NB_DIR/:$PYTHONPATH'
@@ -22,6 +22,7 @@ ENV NB_PORT 8888
 ADD conda.txt /tmp/conda.txt
 ADD pip.txt /tmp/pip.txt
 ADD apt.txt /tmp/apt.txt
+ADD lab.txt /tmp/lab.txt
 
 # Install system packages
 RUN apt-get update && \
@@ -45,13 +46,12 @@ RUN useradd -m -s /bin/zsh -N -u $NB_UID $NB_USER && \
 USER $NB_USER
 
 # Update conda and pip
-RUN conda update -n base conda && \
-    conda install -y python=${python_version} && \
-    pip install --upgrade pip
+RUN pip install --upgrade pip
 
-# Install conda and pip packages
+# Install conda, pip and jupyterlab packages
 RUN conda install --yes --file /tmp/conda.txt -c conda-forge
 RUN pip --no-cache-dir install -r /tmp/pip.txt
+RUN cat /tmp/lab.txt | xargs jupyter labextension install
 
 # Remove conda cache
 RUN conda clean -yt
@@ -61,6 +61,10 @@ USER root
 RUN rm -rf /tmp/*
 
 USER $NB_USER
+# Add on-my-zsh
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+
+# Change shell to zsh
 ENV SHELL /bin/zsh
 
 # Add theano configs
