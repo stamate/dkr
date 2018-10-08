@@ -1,5 +1,5 @@
+keras
 tensorflow-gpu
-cntk-gpu
 torch
 torchvision
 sklearn_pandas
@@ -8,9 +8,10 @@ xlrd
 jupyterlab
 tsfresh
 pandas_validator
-keras
 keras-vis
 transforms3d
 scikit-image
 scikit-optimize
 boto3
+tseries
+hmmlearn
