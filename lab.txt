@@ -1,8 +1,1 @@
-@jupyterlab/statusbar
-@jupyterlab/xkcd-extension
-@jupyterlab/toc
-@jupyterlab/github
-@jupyterlab/git
-@jupyterlab/celltags
-@jupyterlab/shortcutui
 
