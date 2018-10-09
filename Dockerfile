@@ -51,7 +51,7 @@ RUN pip install --upgrade pip
 # Install conda, pip and jupyterlab packages
 RUN conda install --yes --file /tmp/conda.txt -c conda-forge
 RUN pip --no-cache-dir install -r /tmp/pip.txt
-RUN cat /tmp/lab.txt | xargs jupyter labextension install
+#RUN cat /tmp/lab.txt | xargs jupyter labextension install
 
 # Remove conda cache
 RUN conda clean -yt
